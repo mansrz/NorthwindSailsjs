@@ -1,0 +1,87 @@
+
+<div class="row">
+  <div class="col s12">
+    <div class="row center">
+      <div class="btn-large waves-effect waves-light teal lighten-1" id ="nuevo">
+       Nuevo 
+      </a>
+    </div>
+    <table class="highlight responsive-table">
+      <thead>
+        <tr>
+          <th data-field="id">Ship Name</th>
+          <th data-field="name">Company Name</th>
+          <th data-field="name">City</th>
+          <th data-field="price">Ship name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% orders.forEach(function(applicant)  { %>
+        <tr data-id="<%= applicant.id %>" class="orders">
+          <td class="shipname"><%= applicant.ShipName %></td>
+          <td><% if (applicant.CustomerID == undefined) { %>
+            ---
+            <% }else{ %>
+            <%= applicant.CustomerID.Region %>
+             <% } %>
+          </td>
+          <td><%= applicant.ShipRegion %></td>
+          <td class="shipcity"><%= applicant.ShipCity %></td>
+          <td class="delete" data-id="<%= applicant.id %>">Eliminar</td>
+          <td class="update" data-id="<%= applicant.id %>">Modificar</td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- Modal Structure -->
+<div id="modal1" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4>Editar order</h4>
+    <p>Cambie los datos</p>
+    <div class="row">
+      <div class="input-field col s6">
+        <input placeholder="shipaname" name="shipname" id="first_name" type="text" class="validate">
+        <label for="first_name">ShipName</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="last_name" name="shipcity" placeholder="shipcity" type="text" class="validate">
+        <label for="last_name">Ship City</label>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" id="send" class="modal-action waves-effect waves-green btn-flat ">Guardar</a>
+    <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">Cerrar</a>
+  </div>
+</div>
+<!-- Modal nuevo -->
+<div id="modal2" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4>Nuevo order</h4>
+    <p>Cambie los datos</p>
+    <div class="row">
+      <div class="input-field col s12">
+        <select id="customerID">
+          <option value="" disabled selected>Choose your option</option>
+        </select>
+        <label for ="customerID">Customer</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input placeholder="shipaname" name="shipname" id="first_name" type="text" class="validate">
+        <label for="first_name">ShipName</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="last_name"  placeholder="shipcity" name="shipcity" type="text" class="validate">
+        <label for="last_name">Ship City</label>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" id="rave" class="modal-action waves-effect waves-green btn-flat ">Guardar</a>
+    <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">Cerrar</a>
+  </div>
+</div>

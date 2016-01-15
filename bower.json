@@ -1,0 +1,22 @@
+{
+  "name": "northwindjs",
+  "description": "a Sails application",
+  "main": "app.js",
+  "authors": [
+    "mansrz"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "Materialize": "materialize#~0.97.5"
+  }
+}
